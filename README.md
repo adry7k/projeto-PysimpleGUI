@@ -1,6 +1,6 @@
 Projeto de semestre usando a biblioteca PYsimpleGUI.
 
-O programa é um QUIZ de história que apresenta 10(dez) perguntas das mais fáceis até as mais difíceis.
+O programa é um QUIZ de conhecimento geral que apresenta 10(dez) perguntas das mais fáceis até as mais difíceis.
 
 O programa deve mostrar de início que o usuário digite seu nome e assim continue para a proxima janela.Logo após isso,o usuário verá a pergunta na parte superior da janela e as 
 5 (cinco) alternátivas como respostas logo abaixo.
