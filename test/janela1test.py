@@ -1,4 +1,4 @@
-import PySimpleGUI as sg            # dia 01/02/25
+import PySimpleGUI as sg            # dia 08/02/25
 sg.theme('light grey 1')
 
 menu_layout = [['Sobre'],
@@ -6,18 +6,21 @@ menu_layout = [['Sobre'],
 
 layout = [
     [sg.Menu(menu_layout)],
-    [sg.Text('Bem - vindo ao Quiz de história ' , size = (60,2),font=('Arial' , 16 ))],
-    [sg.Text('Digite seu nome :', size = (15,1), font= ('Arial' , 12)),sg.Input( size = (15,1))],
-    [sg.Button('Sair', size=(8,2)), sg.Button('Continuar', size=(8,2))]
+    [sg.Text('Bem-vindo ao QUIZ de conhecimentos gerais ',font=('Arial', 16 ),expand_x=True, text_color = 'White', background_color= 'Grey', size=50, justification='c' )],
+    [sg.Image(filename='emote.gif',size=(500,500))],
+    [sg.Text('Digite seu nome :', size = (15,1), font= ('Arial' , 12)),sg.Input( size = (20,1))],
+    [sg.Text()],
+    [sg.Text()],
+    [sg.Push(),sg.Button('Sair', size=(8,2)), sg.Button('Continuar', size=(8,2))]
     
 ]
 
-janela1 = sg.Window('QUIZ DE HISTÓRIA' , layout, size = (600,300), element_justification= 'center')
+janela1 = sg.Window('QUIZ DE HISTÓRIA' , layout, size = (700,700), element_justification= 'center')
 def Creditos():
-    return sg.popup('Agradecimento','Creditos para os alunos Fulano, Ciclano , beutrano e jubisclano de licenciatura em computação')
+    return sg.popup('Agradecimento','Creditos para os alunos:','CICLANO', 'BELTRANO', 'JUBISCLANO', 'Alunos de licenciatura em computação')
 
 def Sobre():
-    return sg.popup( 'Sobre','O programa é um quiz de história para testar seu conhecimento na área')
+    return sg.popup( 'Sobre','O programa é um quiz de conhecimentos gerais para testar seu nivel de inteligência.                                           DIVIRTA-SE!!!!!!')
     
 while True:
     button,values = janela1.read()
