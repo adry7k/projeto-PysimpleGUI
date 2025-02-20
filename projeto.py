@@ -1,31 +1,58 @@
-import PySimpleGUI as sg            # dia 01/02/25
-sg.theme('light grey 1')
+import PySimpleGUI as sg
+from perguntas import quiz_data
 
-menu_layout = [['Ajuda', ['Sobre']],
-               ['Creditos']]
-
-layout = [
-    [sg.Menu(menu_layout)],
-    [sg.Text('Bem - vindo ao Quiz de história ' ,justification='c', size = (60,2),font=('Arial' , 16 ))],
-    [sg.Text('Digite seu nome:', size = (15,1)),sg.Input( size = (15,1))],
-    [sg.Button('Sair', size=(10,2)), sg.Button('Continuar', size=(10,2))]
+#criando a primeira janela 
+def janela_login(): 
+    sg.theme('light gray 1')
     
-]
+    #Este aqui é lista que será o menu que aparecerá no canto superior esquerdo das janelas
+    menu_layout = [['Sobre'], 
+                    ['Creditos']]
 
-janela1 = sg.Window('QUIZ DE HISTÓRIA' , layout, size = (500,200))
+    layout_inicial = [
+        [sg.Menu(menu_layout)],
+        [sg.Text('Bem-vindo ao QUIZ de conhecimentos gerais', font=('Calibri', 16, 'Bold'),expand_x=True, text_color='White', background_color='Black', justification='c')],
+        [sg.Text()],
+        [sg.Image(filename='question200.png')],
+        [sg.Text()], #Estas linhas vazias são espaçamentos que aparecem para fins estéticos da janela
+        [sg.Text()],
+        [sg.Text()],
+        [sg.Push(), sg.Button('Sair', size=(8, 2)), sg.Button('Jogar',key='-JOGAR-',size=(8, 2))],
+    ]
 
-def Sobre():
-    sg.popup('Sobre', 'O programa é um quiz de história para testar seu conhecimento na área')
+    return sg.Window('QUIZ DE CONHECIMENTO GERAIS', layout_inicial, size=(500, 500), element_justification='center', finalize=True)
+
+evento, valores = janela_login().read()
+
+if janela_login == '-JOGAR-':
+    janela_login.close()
     
-while True:
-    button,values = janela1.read()
+acertos = 0
 
-    if button == 'Sair' or button == sg.WIN_CLOSED:
+for i, item in enumerate(quiz_data):
+    pergunta = item['pergunta']
+    alternativas = item['alternativas']
+    resposta_correta = item['resposta_correta']
+    explicacao = item['explicacao']
+    
+    layout = [
+        [sg.Text(f'Pergunta {i+1}', font=('Calibri bold', 16)), sg.Image('imagempergunta.png')],
+        [sg.Text(pergunta)],
+        [sg.Radio(alternativas[0], 'alternativas'), sg.Radio(alternativas[1], 'alternativas'), sg.Radio(alternativas[2], 'alternativas'), sg.Radio(alternativas[3], 'alternativas'), sg.Radio(alternativas[4], 'alternativas')],
+        [sg.Button('Responder')]
+    ]
+    
+    janela = sg.Window('QUIZ DE CONHECIMENTO GERAIS', layout, finalize=True)
+    
+    evento, valores = janela.read()
+    
+    if evento == sg.WIN_CLOSED:
         break
     
-if button in ('Ajuda'):
-    Sobre()
+    if valores['alternativas'] == resposta_correta:
+        acertos += 1
+        sg.popup('Resposta correta!', explicacao)
+    else:
+        sg.popup('Resposta incorreta!', explicacao)
         
-janela1.close
-
-
+    janela.close()

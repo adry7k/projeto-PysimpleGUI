@@ -1,36 +1,37 @@
-import PySimpleGUI as sg #09/02/2025
+import PySimpleGUI as sg  #09/02/2025
 
-def janela_login():
+
+#criando a primeira janela de login
+def janela_login(): 
     sg.theme('light gray 1')
     
+    #Este aqui é lista que será o menu que aparecerá no canto superior esquerdo das janelas
     menu_layout = [['Sobre'], 
                     ['Creditos']]
 
-    layout = [
+    layout_inicial = [
         [sg.Menu(menu_layout)],
-        [sg.Text('Bem-vindo ao QUIZ de conhecimentos gerais', font=('Arial 30 bold', 16), expand_x=True, text_color='White', background_color='Black', justification='c')],
+        [sg.Text('Bem-vindo ao QUIZ de conhecimentos gerais', font=('Calibri', 16),expand_x=True, text_color='White', background_color='Black', justification='c')],
         [sg.Text()],
         [sg.Image(filename='question200.png')],
+        [sg.Text()], #Estas linhas vazias são espaçamentos que aparecem para fins estéticos da janela
         [sg.Text()],
-        [sg.Text()],
-        [sg.Text()],
-        [sg.Text('Digite seu nome:', size=(15, 1), font=('Arial 20 bold', 12)), sg.Input(size=(25, 1), key='-USUARIO-')],
         [sg.Text()],
         [sg.Push(), sg.Button('Sair', size=(8, 2)), sg.Button('Continuar', size=(8, 2))],
-        [sg.Text('', key='-MENSAGEM-',text_color= 'Red')]
     ]
 
-    return sg.Window('QUIZ DE CONHECIMENTO GERAIS', layout, size=(500, 500), element_justification='center', finalize=True)
+    return sg.Window('QUIZ DE CONHECIMENTO GERAIS', layout_inicial, size=(500, 500), element_justification='center', finalize=True)
 
+#Criando a segunda janela
 def janela_questions():
     sg.theme('light gray 1')
     
-    menu_dois = [['Sobre'],
+    menu_dois = [['Sobre'], 
                  ['Creditos']]
      
     layout_dois = [
         [sg.Menu(menu_dois)],
-        [sg.Text('Pergunta', font=('Calibri bold 20', 16)), sg.Image('imagempergunta.png')],
+        [sg.Text('Pergunta', font=('Calibri bold', 16)), sg.Image('imagempergunta.png')],
         [sg.Text()],
         [sg.Text()],
         [sg.Checkbox('Alternativa1', font=('Arial', 12), size=(15, 1))],
@@ -48,14 +49,17 @@ def Creditos():
     sg.popup('Agradecimento', 'Creditos para os alunos:', 'CICLANO', 'BELTRANO', 'JUBISCLANO', 'Alunos de licenciatura em computação')
 
 def Sobre():
-    sg.popup('Sobre', 'O programa é um quiz de conhecimentos gerais para testar seu nivel de inteligência')
+    sg.popup('Sobre', 'O programa é um quiz de conhecimentos gerais para testar seu nível de inteligência')
 
-janela1, janela2 = janela_login(), None
+janela1, janela2 = janela_login(), None  #Faz com o que as duas janelas não sejam abertas ao mesmo tempo e somente a de login
 
 while True:
-    window, evento, valores = sg.read_all_windows()
+    """window: Identifica as janelas para interações
+    evento: As interações que o usuário fará nas janelas
+    valores: é o valor que ficará guardado na memória do programa"""
+    window, evento, valores = sg.read_all_windows() 
     
-    if window == janela1 and (evento == sg.WIN_CLOSED or evento == 'Sair'):
+    if window == janela1 and evento == sg.WIN_CLOSED or evento == 'Sair':
         break
     
     if window == janela1 and evento == 'Continuar':
