@@ -13,7 +13,7 @@ def janela_login():
         [sg.Menu(menu_layout)],
         [sg.Text('Bem-vindo ao QUIZ de conhecimentos gerais', font=('Calibri', 16),expand_x=True, text_color='White', background_color='Black', justification='c')],
         [sg.Text()],
-        [sg.Image(filename='question200.png')],
+        [sg.Image(filename='question300.png')],
         [sg.Text()], #Estas linhas vazias são espaçamentos que aparecem para fins estéticos da janela
         [sg.Text()],
         [sg.Text()],
