@@ -1,8 +1,7 @@
 from PIL import Image
 
-imagem = Image.open('question200.png')
+imagem = Image.open('ufra.png')
 
-tamanho = (300,300)
+tamanho = (100,100)
 imagem.thumbnail(tamanho)
-imagem.save('question300.png')
-
+imagem.save('ufra100.png')

@@ -155,9 +155,9 @@ perguntas_de_mat = [ #Perguntas de matemática
     },
     {
         "pergunta": "Qual é o resultado de 45 - 18?",
-        "alternativas": ["15", "20", "25", "30", "35"],
-        "resposta_correta": "27",
-        "explicacao": "A subtração de 45 - 18 resulta em 27."
+        "alternativas": ["15", "20", "25", "30", "37"],
+        "resposta_correta": "37",
+        "explicacao": "A subtração de 45 - 18 resulta em 37"
     },
     {
         "pergunta": "Qual é o resultado da expressão 2⁴?",
@@ -196,3 +196,6 @@ perguntas_de_mat = [ #Perguntas de matemática
 quiz_data = perguntas_de_ciencia + perguntas_de_humanas + perguntas_de_mat #Juntando todas as perguntas em uma lista
 
 random.shuffle(quiz_data) #Embaralha as perguntas
+
+perguntas_do_quiz = quiz_data[:5] 
+
