@@ -1,10 +1,11 @@
 import PySimpleGUI as sg
+import random
 from perguntas import quiz_data
 
 
 
 
-sg.theme('Reddit')  # Define o tema da janela
+sg.theme('Random')  # Define o tema da janela
 
 menu_layout = [['Sobre'], ['Créditos']]
 
@@ -52,8 +53,12 @@ janela.close()  # Fecha a janela inicial antes de iniciar o quiz
 # Iniciar contagem de acertos
 acertos = 0
 
+
+limite_das_perguntas = random.sample(quiz_data, 15) #busca 15 perguntas aleatórias
+
+
 # Loop para as perguntas
-for i, item in enumerate(quiz_data):
+for i, item in enumerate(limite_das_perguntas):
     layout_pergunta = [
         [sg.Menu(menu_layout)],
         [sg.Text(item["pergunta"], font=("Arial", 14, "bold"), justification="center"), sg.Image(filename="que2.png")],
@@ -102,5 +107,5 @@ for i, item in enumerate(quiz_data):
     janela.close()  # Fecha a janela da pergunta atual antes de ir para a próxima
 
 # Exibir pontuação final
-sg.popup(f"Quiz finalizado! Você acertou {acertos} de {len(quiz_data)} perguntas.", title="Resultado Final")
+sg.popup(f"Quiz finalizado! Você acertou {acertos} de {len(limite_das_perguntas)} perguntas.", title="Resultado Final")
 

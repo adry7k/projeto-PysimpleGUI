@@ -166,14 +166,14 @@ perguntas_de_mat = [ #Perguntas de matemática
         "explicacao": "A expressão 2⁴ é resolvida elevando 2 à quarta potência, resultando em 16."
     },
     {
-        "pergunta": "Qual é o resultado da expressão √(25 + 9)?",
-        "alternativas": ["4", "5", "6", "7", "8"],
-        "resposta_correta": "4",
-        "explicacao": "A expressão √(25 + 9) é resolvida primeiro a soma e depois a raiz quadrada, resultando em 4."
+        "pergunta": "Qual é o resultado da expressão √(70 + 99)?",
+        "alternativas": ["13", "17", "9", "21", "15"],
+        "resposta_correta": "13",
+        "explicacao": "A expressão √(70 + 99) é resolvida primeiro a soma e depois a raiz quadrada, resultando em 13."
     },
     {
         "pergunta": "Qual é o resultado da expressão 3/4 + 1/2?",
-        "alternativas": ["1/4", "1/2", "3/4", "1", "2"],
+        "alternativas": ["6/3", "1/2", "3/4", "5/4", "1"],
         "resposta_correta": "5/4",
         "explicacao": "A expressão 3/4 + 1/2 é resolvida somando as frações, resultando em 5/4."
     },
@@ -197,5 +197,4 @@ quiz_data = perguntas_de_ciencia + perguntas_de_humanas + perguntas_de_mat #Junt
 
 random.shuffle(quiz_data) #Embaralha as perguntas
 
-perguntas_do_quiz = quiz_data[:5] 
 
