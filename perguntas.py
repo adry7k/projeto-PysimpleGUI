@@ -121,10 +121,71 @@ perguntas_de_humanas = [ #Perguntas de humanas
         "explicacao": "O Oceano Pacífico é o maior oceano do mundo, cobrindo aproximadamente um terço da superfície terrestre"
     },
     {
-        "pergunta": "Qual foi o principal líder do movimento pela independência do Brasil?",
-        "alternativas": ["Dom Pedro I", "José Bonifácio", "Tiradentes", "Dom Pedro II", "Leopoldina"],
-        "resposta_correta": "Dom Pedro I",
-        "explicacao": "Dom Pedro I foi o principal líder do movimento pela independência do Brasil, proclamando a separação de Portugal em 1822."
+        "pergunta": "A Revolução Industrial teve início em qual país?",
+        "alternativas": ["França", "Alemanha", "Inglaterra", "Estados Unidos", "Japão"],
+        "resposta_correta": "Inglaterra",
+        "explicacao": "A Revolução Industrial teve início na Inglaterra no final do século XVIII, transformando a produção e a sociedade."
+    },
+    {
+        "pergunta": "O que caracterizou o Iluminismo?",
+        "alternativas": ["O fortalecimento da monarquia","A busca pelo conhecimento e razão", "A centralização da religião", "A expansção do feudalismo", "O retorno do pensamento medieval"],
+        "resposta_correta": "A busca pelo conhecimento e razão",
+        "explicacao": "O Iluminismo foi um movimento intelectual que enfatizou a razão, a ciência e o conhecimento como formas de entender o mundo e promover o progresso."
+    },
+    {
+        "pergunta": "Quem escreveu 'O principe', um tratado sobre política?",
+        "alternativas": ["Maquiavel", "Platão", "Aristóteles", "Sócrates", "Hobbes"],
+        "resposta_correta": "Maquiavel",
+        "explicacao": "'O Príncipe' é uma obra de Nicolau Maquiavel que aborda a política e o poder, sendo um dos principais tratados políticos da história."
+    },
+    {
+        "pergunta": "Quem foi o responsável pela teoria da evolução das espécies?",
+        "alternativas": ["Galileu Galilei", "Charles Darwin", "Isaac Newton", "Albert Einstein", "Louis Pasteur"],
+        "resposta_correta": "Charles Darwin",
+        "explicacao": "Charles Darwin é conhecido por desenvolver a teoria da evolução das espécies através da seleção natural."
+    },
+    {
+        "pergunta": "Qual foi o principal movimento artístico e cultural do Renascimento?",
+        "alternativas": ["Barroco", "Romantismo", "Classicismo", "Realismo", "Humanismo"],
+        "resposta_correta": "Humanismo",
+        "explicacao": "O Humanismo foi um movimento cultural que valorizou o ser humano, a razão e a antiguidade clássica durante o Renascimento."
+    },
+    {
+        "pergunta": "Qual é o maior continente do mundo?",
+        "alternativas": ["África", "América", "Ásia", "Europa", "Oceania"],
+        "resposta_correta": "Ásia",
+        "explicacao": "A Ásia é o maior continente do mundo, tanto em área quanto em população."
+    },
+    {
+        "pergunta": "O que é o positivismo, criado por Auguste Comte?",
+        "alternativas": ["Uma corrente filosófica que valoriza a ciência e o progresso", "Uma teoria política sobre a democracia", "Um movimento artístico do século XIX", "Uma religião nova", "Uma teoria econômica"],
+        "resposta_correta": "Uma corrente filosófica que valoriza a ciência e o progresso",
+        "explicacao": "O positivismo é uma corrente filosófica que defende a ideia de que o conhecimento deve ser baseado em fatos observáveis e científicos."
+        
+    },
+    {
+        "pergunta": "O que foi o Tratado de Tordesilhas (1494)?",
+        "alternativas": ["Um acordo entre Portugal e Espanha para dividir o Novo Mundo", "Um tratado de paz entre França e Inglaterra", "Um acordo comercial entre Portugal e Índia", "Um tratado de aliança militar", "Uma convenção internacional sobre direitos humanos"],
+        "resposta_correta": "Um acordo entre Portugal e Espanha para dividir o Novo Mundo",
+        "explicacao": "O Tratado de Tordesilhas foi um acordo entre Portugal e Espanha que dividiu as terras descobertas no Novo Mundo entre os dois países."
+    },
+    {
+        "pergunta": "Qual foi o principal objetivo do colonialismo europeu na África?",
+        "alternativas": ["Promover a independência dos países africanos", "Explorar recursos naturais e expandir territórios", "Desenvolver a educação e saúde", "Promover a igualdade social", "Estabelecer relações diplomáticas"],
+        "resposta_correta": "Explorar recursos naturais e expandir territórios",
+        "explicacao": "O colonialismo europeu na África teve como principal objetivo explorar recursos naturais e expandir os territórios coloniais."
+    },
+    {
+        "pergunta": "Qual foi o principal motivo da Revolução Americana?",
+        "alternativas": ["Busca por liberdade religiosa", "Impostos altos sem representação", "Conflitos territoriais com a França", "Apoio à Revolução Francesa", "Busca por novas terras"],
+        "resposta_correta": "Impostos altos sem representação",
+        "explicacao": "A Revolução Americana foi motivada pela insatisfação com os impostos altos impostos pela Grã-Bretanha sem representação no Parlamento."
+    },
+    {
+        "pergunta": "Quem é considerado o pai da filosofia ocidental?",
+        "alternativas": ["Sócrates", "Platão", "Aristóteles", "René Descartes", "Pitágoras"],
+        "resposta_correta": "Sócrates",
+        "explicacao": "Sócrates é considerado o pai da filosofia ocidental, conhecido por seu método de questionamento e busca pela verdade."
     }
     ]
 
@@ -143,7 +204,7 @@ perguntas_de_mat = [ #Perguntas de matemática
     },
     {
         "pergunta": "Qual é o resultado da expressão 3² + 4²?",
-        "alternativas": ["25", "17", "9", "11", "13"],
+        "alternativas": ["25", "17", "27", "15", "21"],
         "resposta_correta": "25",
         "explicacao": "A expressão 3² + 4² é resolvida elevando cada número ao quadrado e somando os resultados, resultando em 25."
     },
@@ -155,8 +216,8 @@ perguntas_de_mat = [ #Perguntas de matemática
     },
     {
         "pergunta": "Qual é o resultado de 45 - 18?",
-        "alternativas": ["15", "20", "25", "30", "37"],
-        "resposta_correta": "37",
+        "alternativas": ["27", "30", "25", "22", "20"],
+        "resposta_correta": "27",
         "explicacao": "A subtração de 45 - 18 resulta em 37"
     },
     {

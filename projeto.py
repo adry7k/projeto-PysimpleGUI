@@ -5,7 +5,7 @@ from perguntas import quiz_data
 
 
 
-sg.theme('Random')  # Define o tema da janela
+sg.theme('Reddit')  # Define o tema da janela
 
 menu_layout = [['Sobre'], ['Créditos']]
 
@@ -29,7 +29,7 @@ def Creditos():
     sg.popup( 'Créditos para os alunos:', 'Adriano Messias', 'Vinicius Coelho', 'Danielly Ribeiro','Geovanna Moy','Yamara Barbosa' ,'Alunos de Licenciatura em Computação', title='Créditos')
 
 def Sobre():
-    sg.popup( 'O programa é destinado para testar seus conhecimentos, com a finalidade de ajudar em seu desenvolvimento intelectual.', title='Sobre')
+    sg.popup( 'O objetivo do programa é testar seus conhecimentos nas demais aréas do saber, com a finalidade de ajudar em seu desenvolvimento intelectual. O programa é composto por 15 perguntas, sendo elas de Humanas, Ciências e Matemática. DIVIRTA-SE!!!.', title='Sobre')
 
 # Loop de eventos da janela inicial
 while True:
