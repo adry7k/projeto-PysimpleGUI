@@ -128,7 +128,7 @@ perguntas_de_humanas = [ #Perguntas de humanas
     },
     {
         "pergunta": "O que caracterizou o Iluminismo?",
-        "alternativas": ["O fortalecimento da monarquia","A busca pelo conhecimento e razão", "A centralização da religião", "A expansção do feudalismo", "O retorno do pensamento medieval"],
+        "alternativas": ["O fortalecimento da monarquia","A busca pelo conhecimento e razão", "A centralização da religião", "A expansão do feudalismo", "O retorno do pensamento medieval"],
         "resposta_correta": "A busca pelo conhecimento e razão",
         "explicacao": "O Iluminismo foi um movimento intelectual que enfatizou a razão, a ciência e o conhecimento como formas de entender o mundo e promover o progresso."
     },
@@ -183,7 +183,7 @@ perguntas_de_humanas = [ #Perguntas de humanas
     },
     {
         "pergunta": "Quem é considerado o pai da filosofia ocidental?",
-        "alternativas": ["Sócrates", "Platão", "Aristóteles", "René Descartes", "Pitágoras"],
+        "alternativas": ["Sócrates", "Platão", "Aristóteles", "Tales de Mileto", "Pitágoras"],
         "resposta_correta": "Sócrates",
         "explicacao": "Sócrates é considerado o pai da filosofia ocidental, conhecido por seu método de questionamento e busca pela verdade."
     }
@@ -230,7 +230,7 @@ perguntas_de_mat = [ #Perguntas de matemática
         "pergunta": "Qual é o resultado da expressão √(70 + 99)?",
         "alternativas": ["13", "17", "9", "21", "15"],
         "resposta_correta": "13",
-        "explicacao": "A expressão √(70 + 99) é resolvida primeiro a soma e depois a raiz quadrada, resultando em 13."
+        "explicacao": "A expressão √(70 + 99) é resolvida primeiro a soma que dá 169 e depois a raiz quadrada, resultando em 13."
     },
     {
         "pergunta": "Qual é o resultado da expressão 3/4 + 1/2?",

@@ -12,12 +12,12 @@ menu_layout = [['Sobre'], ['Créditos']]
 # Criar a janela inicial com o botão "Jogar" e a imagem
 layout_inicial = [
     [sg.Menu(menu_layout)],
-    [sg.Image(filename="acertou4.png", pad = (35,20)),sg.Text('Bem-vindo ao QUIZ de conhecimentos gerais', font=('Calibri', 17, 'bold'), justification='center'), sg.Image(filename="pensativo2.png", pad = (35,20))],
+    [sg.Image(filename="acertou4.png", pad = (35,20)),sg.Text('Bem-vindo ao QUIZ de conhecimentos gerais', font=('Calibri', 17, 'bold'), justification='center', text_color= 'green'), sg.Image(filename="pensativo2.png", pad = (35,20))],
     [sg.Image(filename="question300.png", expand_x=True)],  
     [sg.Text()],
     [sg.Text()],
-    [sg.Button("Sair", key='-SAIR-', size=(15, 2), font=("Arial", 10)),
-     sg.Button("Jogar", key="-JOGAR-", size=(15, 2), font=("Arial", 10))],
+    [sg.Button("Sair", key='-SAIR-', size=(15, 2),button_color= 'green' , font=("Arial", 10)),
+     sg.Button("Iniciar", key="-INICIAR-", size=(15, 2), button_color= 'green' , font=("Arial", 10))],
     [sg.Image(filename="ufra100.png",pad=(35,20)),sg.Push()],
 ]
 
@@ -36,16 +36,17 @@ while True:
     evento, valores = janela.read()
     
     if evento == sg.WINDOW_CLOSED or evento == '-SAIR-':
-        janela.close()
+        janela.close() # Fecha a janela
         exit()
-
+        
+    # Verifica se o usuário clicou no menu "Sobre" ou "Créditos"
     if evento == 'Sobre':
         Sobre()
 
     if evento == 'Créditos':
         Creditos()
 
-    if evento == "-JOGAR-":
+    if evento == "-INICIAR-":
         break  # Sai do loop e inicia o quiz
 
 janela.close()  # Fecha a janela inicial antes de iniciar o quiz
@@ -66,20 +67,18 @@ for i, item in enumerate(limite_das_perguntas):
         
 
     
-    
-    
     # Adiciona as opções de resposta
     for alternativa in item["alternativas"]:
         layout_pergunta.append([
             [sg.Text()],
-            [sg.Button(alternativa, key=alternativa, size=(40, 2))],
+            [sg.Button(alternativa, key=alternativa, button_color='green' ,size=(48, 2))],
         ]
             )
         
         
 
     # Criar a janela para cada pergunta
-    janela = sg.Window("Quiz de conhecimentos gerais", layout_pergunta, size=(800, 500), resizable=True, element_justification="center")
+    janela = sg.Window("Quiz de conhecimentos gerais", layout_pergunta, size=(850, 570), resizable=True, element_justification="center")
     
 
 
@@ -107,5 +106,19 @@ for i, item in enumerate(limite_das_perguntas):
     janela.close()  # Fecha a janela da pergunta atual antes de ir para a próxima
 
 # Exibir pontuação final
-sg.popup(f"Quiz finalizado! Você acertou {acertos} de {len(limite_das_perguntas)} perguntas.", title="Resultado Final")
+
+if acertos == 15:
+    sg.popup(f"Meus Parabéns!!! Você acertou {acertos} das {len(limite_das_perguntas)} perguntas!","Você é uma pessoa muito inteligente! sabia? ;)", title="Resultado Final")
+    
+if acertos < 15 and acertos >= 10:
+    sg.popup(f"Parabéns! Você acertou {acertos} de {len(limite_das_perguntas)} das perguntas.","Você se saiu muito bem!", title="Resultado Final")
+
+if acertos < 10 and acertos >= 7:
+    sg.popup(f"Bom trabalho! Você acertou {acertos} de {len(limite_das_perguntas)} das perguntas.","Você pode melhorar! não desista.", title="Resultado Final")
+    
+if acertos < 7 and acertos >= 5:
+    sg.popup(f"Você acertou {acertos} de {len(limite_das_perguntas)} das perguntas.","Você precisa estudar mais! não perca o foco.", title="Resultado Final")
+
+if acertos < 5:
+    sg.popup(f"Você acertou {acertos} de {len(limite_das_perguntas)} das perguntas.","Você se saiu muito mal! :(", title="Resultado Final")
 
