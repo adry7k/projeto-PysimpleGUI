@@ -106,7 +106,7 @@ for i, item in enumerate(limite_das_perguntas):
 # Exibir pontuação final
 
 if acertos == 15:
-    sg.popup(f"Meus Parabéns!!! Você acertou {acertos} das {len(limite_das_perguntas)} perguntas!","Você é uma pessoa muito inteligente! sabia? ;)", title="Resultado Final")
+    sg.popup(f"Meus Parabéns!!! Você acertou {acertos} das {len(limite_das_perguntas)} perguntas!","Você é uma pessoa muito inteligente! ;)", title="Resultado Final")
     
 if acertos < 15 and acertos >= 10:
     sg.popup(f"Parabéns! Você acertou {acertos} de {len(limite_das_perguntas)} das perguntas.","Você se saiu muito bem!", title="Resultado Final")
@@ -118,5 +118,5 @@ if acertos < 7 and acertos >= 5:
     sg.popup(f"Você acertou {acertos} de {len(limite_das_perguntas)} das perguntas.","Você precisa estudar mais! não perca o foco.", title="Resultado Final")
 
 if acertos < 5:
-    sg.popup(f"Você acertou {acertos} de {len(limite_das_perguntas)} das perguntas.","Você se saiu muito mal! :(", title="Resultado Final")
+    sg.popup(f"Você acertou {acertos} de {len(limite_das_perguntas)} das perguntas.","Você se saiu muito mal. Vamos tentar novamente? :(", title="Resultado Final")
 
