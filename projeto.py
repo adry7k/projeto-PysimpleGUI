@@ -26,10 +26,10 @@ janela = sg.Window("Quiz de Conhecimentos Gerais", layout_inicial, size=(850, 57
 
 # Funções para exibir popups
 def Creditos():
-    sg.popup( 'Créditos para os alunos:', 'Adriano Messias', 'Vinicius Coelho', 'Danielly Ribeiro','Geovanna Moy','Yamara Barbosa' ,'Alunos de Licenciatura em Computação', title='Créditos')
+    sg.popup( 'Projeto: Quiz de Conhecimento gerais','Instituição: Universidade Federal Rural da Amazônia','Curso: Licenciatura em computação','Equipe de desenvolvimento:' ,'Adriano Messias', 'Vinicius Coelho', 'Danielly Ribeiro','Geovanna Moy','Yamara Barbosa', title='Créditos')
 
 def Sobre():
-    sg.popup( 'O objetivo do programa é testar seus conhecimentos nas demais aréas do saber, com a finalidade de ajudar em seu desenvolvimento intelectual. O programa é composto por 15 perguntas, sendo elas de Humanas, Ciências e Matemática. DIVIRTA-SE!!!.', title='Sobre')
+    sg.popup( 'O objetivo do programa é testar seus conhecimentos nas demais aréas do saber, com a finalidade de ajudar em seu desenvolvimento intelectual.', 'O programa é composto por 15 perguntas, sendo elas de Humanas, Ciências e Matemática.',' DIVIRTA-SE!!!.', title='Sobre')
 
 # Loop de eventos da janela inicial
 while True:
@@ -61,10 +61,10 @@ limite_das_perguntas = random.sample(quiz_data, 15) #busca 15 perguntas aleatór
 # Loop para as perguntas
 for i, item in enumerate(limite_das_perguntas):
     layout_pergunta = [
-        [sg.Menu(menu_layout)],
-        [sg.Text(item["pergunta"], font=("Arial", 14, "bold"), justification="center"), sg.Image(filename="que2.png")],
-         ]
+            [sg.Menu(menu_layout)],
+            [sg.Text(item["pergunta"], font=("Arial", 14, "bold"), justification="center"), sg.Image(filename="que2.png")],
         
+    ]
 
     
     # Adiciona as opções de resposta
@@ -73,9 +73,7 @@ for i, item in enumerate(limite_das_perguntas):
             [sg.Text()],
             [sg.Button(alternativa, key=alternativa, button_color='green' ,size=(48, 2))],
         ]
-            )
-        
-        
+            )     
 
     # Criar a janela para cada pergunta
     janela = sg.Window("Quiz de conhecimentos gerais", layout_pergunta, size=(850, 570), resizable=True, element_justification="center")
