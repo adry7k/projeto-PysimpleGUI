@@ -16,7 +16,7 @@ Equipe de Desenvolvimento:
 - Yamara Barbosa
 
 
-Agradecemos também ao professor João Santanna pelo apoio e orientação.
+
 
 
 
