@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+
 import random
 
 # Definindo as perguntas e respostas

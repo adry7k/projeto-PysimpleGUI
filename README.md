@@ -8,12 +8,7 @@ O programa é um QUIZ de conhecimento geral que apresenta 15(-Quinze-) perguntas
 
 Este projeto foi desenvolvido por estudantes do curso de Licenciatura em Computação da Universidade Federal Rural Da Amazônia.
 
-Equipe de Desenvolvimento:  
-- Adriano Messias
-- Vinicius Coelho
-- Danielly Ribeiro
-- Geovanna Moy
-- Yamara Barbosa
+
 
 
 

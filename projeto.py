@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
-import random
-from perguntas import quiz_data
+import random # Importa a biblioteca random para gerar números aleatórios
+from perguntas import quiz_data # Importa o arquivo das perguntas
 
 
 
@@ -12,13 +12,14 @@ menu_layout = [['Sobre'], ['Créditos']]
 # Criar a janela inicial com o botão "Jogar" e a imagem
 layout_inicial = [
     [sg.Menu(menu_layout)],
-    [sg.Image(filename="acertou4.png", pad = (35,20)),sg.Text('Bem-vindo ao QUIZ de conhecimentos gerais', font=('Calibri', 17, 'bold'), justification='center', text_color= 'green'), sg.Image(filename="pensativo2.png", pad = (35,20))],
-    [sg.Image(filename="question300.png", expand_x=True)],  
+    [sg.Image(filename="imagem1.png", pad = (35,20)),sg.Text('Bem-vindo ao QUIZ de conhecimentos gerais', font=('Calibri', 17, 'bold')
+    ,justification='center', text_color= 'green'), sg.Image(filename="imagem2.png", pad = (35,20))],
+    [sg.Image(filename="imagem3.png", expand_x=True)],  
     [sg.Text()],
     [sg.Text()],
     [sg.Button("Sair", key='-SAIR-', size=(15, 2),button_color= 'green' , font=("Arial", 10)),
      sg.Button("Iniciar", key="-INICIAR-", size=(15, 2), button_color= 'green' , font=("Arial", 10))],
-    [sg.Image(filename="ufra100.png",pad=(35,20)),sg.Push()],
+    [sg.Image(filename="logoufra.png",pad=(35,20)),sg.Push()],
 ]
 
 # Criar a janela inicial
@@ -26,7 +27,9 @@ janela = sg.Window("Quiz de Conhecimentos Gerais", layout_inicial, size=(850, 57
 
 # Funções para exibir popups
 def Creditos():
-    sg.popup( 'Projeto: Quiz de Conhecimento gerais','Instituição: Universidade Federal Rural da Amazônia','Curso: Licenciatura em computação','Equipe de desenvolvimento:' ,'Adriano Messias', 'Vinicius Coelho', 'Danielly Ribeiro','Geovanna Moy','Yamara Barbosa', title='Créditos')
+    sg.popup( 'Projeto: Quiz de Conhecimento gerais','Instituição: Universidade Federal Rural da Amazônia','Curso: Licenciatura em computação',
+             'Equipe de desenvolvimento:' ,'Adriano Messias', 'Vinicius Coelho', 'Danielly Ribeiro','Geovanna Moy'
+             ,'Yamara Barbosa', title='Créditos')
 
 def Sobre():
     sg.popup( 'O objetivo do programa é testar seus conhecimentos nas demais aréas do saber, com a finalidade de ajudar em seu desenvolvimento intelectual.', 'O programa é composto por 15 perguntas, sendo elas de Humanas, Ciências e Matemática.',' DIVIRTA-SE!!!.', title='Sobre')
@@ -62,20 +65,20 @@ limite_das_perguntas = random.sample(quiz_data, 15) #busca 15 perguntas aleatór
 for i, item in enumerate(limite_das_perguntas):
     layout_pergunta = [
             [sg.Menu(menu_layout)],
-            [sg.Text(item["pergunta"], font=("Arial", 14, "bold"), justification="center"), sg.Image(filename="que2.png")],
+            [sg.Text(item["pergunta"], font=("Arial", 14, "bold"), justification="center"), sg.Image(filename="imagem4.png")],
         
     ]
 
     
     # Adiciona as opções de resposta
-    for alternativa in item["alternativas"]:
+    for alternativa in item["alternativas"]: 
         layout_pergunta.append([
             [sg.Text()],
-            [sg.Button(alternativa, key=alternativa, button_color='green' ,size=(48, 2))],
+            [sg.Button(alternativa, key=alternativa, button_color='green' ,size=(48, 2))], 
         ]
             )     
 
-    # Criar a janela para cada pergunta
+    # Define o layout da janela para cada pergunta
     janela = sg.Window("Quiz de conhecimentos gerais", layout_pergunta, size=(850, 570), resizable=True, element_justification="center")
     
 
@@ -85,13 +88,13 @@ for i, item in enumerate(limite_das_perguntas):
 
         if evento in (sg.WINDOW_CLOSED, '-SAIR-'):
             janela.close()
-            exit()
+            exit() # Fecha a janela se o usuário clicar no botão "Sair" ou fechar a janela
 
         if evento == 'Sobre':
-            Sobre()
+            Sobre() # Exibe a janela de sobre quando o usuário clica no menu "Sobre"
 
         if evento == 'Créditos':
-            Creditos()
+            Creditos() # Exibe a janela de créditos quando o usuário clica no menu "Créditos"
 
         if evento in item["alternativas"]:
             if evento == item["resposta_correta"]:
