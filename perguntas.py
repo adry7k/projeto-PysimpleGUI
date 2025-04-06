@@ -254,8 +254,12 @@ perguntas_de_mat = [ #Perguntas de matemática
 ]
 
 
-quiz_data = perguntas_de_ciencia + perguntas_de_humanas + perguntas_de_mat #Juntando todas as perguntas em uma lista
+
+#Junta todas as perguntas do dicionário na variável quiz_data
+# As perguntas são divididas em três categorias: ciências, humanas e matemática.
+quiz_data = perguntas_de_ciencia + perguntas_de_humanas + perguntas_de_mat
 
 random.shuffle(quiz_data) #Embaralha as perguntas
+
 
 
